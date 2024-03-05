@@ -9,7 +9,7 @@ function App() {
   const [color, setColor] = useState("white");
 
   return (
-    <div className="app">
+    <div>
       {/* <BackgroundButtonTest></BackgroundButtonTest> */}
       {/* Apply the class here */}
       <Remote color={color}/>

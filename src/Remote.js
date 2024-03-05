@@ -18,12 +18,9 @@ function Remote({ color }) {
       }}
     >
       <Card
+        className="remote-card"
         style={{
-          padding: "5px",
-          width: "270px",
-          height: "610px",
           backgroundColor: "black",
-          borderRadius: "4px",
         }}
       >
         <Card style={{ borderRadius: "4px", height: "100%", width: "100%" }}>

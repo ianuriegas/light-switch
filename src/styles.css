@@ -12,26 +12,13 @@
     /* Align vertical */
 }
 
-.app {
-    /* background-color: blue; */
-    /* Set your desired color here */
-    height: 100vh;
-    /* Make sure it takes up the full viewport height */
-    width: 100vw;
-    /* Make sure it takes up the full viewport width */
-}
-
-.remote-container {
-    padding: 10px;
-}
-
 .remote-card {
     padding: 5px;
     width: 270px;
     height: 610px;
-    background-color: black;
     border-radius: 4px;
 }
+
 
 .inner-card {
     border-radius: 4px;
