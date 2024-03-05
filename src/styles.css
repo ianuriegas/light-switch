@@ -1,0 +1,51 @@
+.dot {
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.app {
+    /* background-color: blue; */
+    /* Set your desired color here */
+    height: 100vh;
+    /* Make sure it takes up the full viewport height */
+    width: 100vw;
+    /* Make sure it takes up the full viewport width */
+}
+
+.remote-container {
+    padding: 10px;
+}
+
+.remote-card {
+    padding: 5px;
+    width: 270px;
+    height: 610px;
+    background-color: black;
+    border-radius: 4px;
+}
+
+.inner-card {
+    border-radius: 4px;
+    height: 100%;
+    width: 100%;
+}
+
+.stack-row {
+    background-color: black;
+    padding: 3px;
+    border-radius: 40px;
+    /* Or 20px depending on the specific stack */
+}
+
+:root {
+    --background-color: white;
+    /* Default color */
+}
+
+body {
+    background-color: var(--background-color);
+}
