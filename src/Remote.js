@@ -1,15 +1,33 @@
-import { Card, Stack, Typography } from "@mui/material";
-import React from "react";
+import { Card, Stack, Tooltip, Typography } from "@mui/material";
+import React, { useState } from "react";
 import "./styles.css";
 import PowerSettingsNewIcon from "@mui/icons-material/PowerSettingsNew";
 import ArrowDropUpOutlinedIcon from "@mui/icons-material/ArrowDropUpOutlined";
 import ArrowDropDownOutlinedIcon from "@mui/icons-material/ArrowDropDownOutlined";
 function Remote({ color }) {
+  const [colorInterval, setColorInterval] = useState(null); // State to hold the interval ID
+
   const changeBackgroundColor = (color) => {
+    if (colorInterval) {
+      clearInterval(colorInterval); // Clear the existing color-changing interval
+      setColorInterval(null); // Reset the interval ID in the state
+    }
     document.documentElement.style.setProperty("--background-color", color);
   };
+
   const jumpBackgroundColor = (colors) => {
-    console.log(colors);
+    let currentColorIndex = 0;
+    if (colorInterval) {
+      clearInterval(colorInterval); // Make sure to clear existing interval to prevent multiple intervals running
+    }
+    const interval = setInterval(() => {
+      document.documentElement.style.setProperty(
+        "--background-color",
+        colors[currentColorIndex]
+      );
+      currentColorIndex = (currentColorIndex + 1) % colors.length; // Move to the next color
+    }, 1000); // Change color every 1 second (1000 milliseconds)
+    setColorInterval(interval); // Save the interval ID so we can clear it later
   };
   return (
     <div
@@ -32,9 +50,8 @@ function Remote({ color }) {
                 <Stack
                   direction={"row"}
                   spacing={2.5}
+                  className="grid-background"
                   style={{
-                    backgroundColor: "black",
-                    padding: "3px",
                     borderRadius: "40px",
                   }}
                 >
@@ -48,9 +65,8 @@ function Remote({ color }) {
                 <Stack
                   direction={"row"}
                   spacing={2.5}
+                  className="grid-background"
                   style={{
-                    backgroundColor: "black",
-                    padding: "3px",
                     borderRadius: "40px",
                   }}
                 >
@@ -77,13 +93,12 @@ function Remote({ color }) {
                 </Stack>
               </Stack>
               {/* Second grid */}
-              <Stack direction={"row"} spacing={2.5}>
+              <Stack direction={"row"}>
                 <Stack
                   direction={"row"}
                   spacing={2.5}
+                  className="grid-background"
                   style={{
-                    backgroundColor: "black",
-                    padding: "3px",
                     borderRadius: "20px",
                   }}
                 >
@@ -238,13 +253,12 @@ function Remote({ color }) {
                 </Stack>
               </Stack>
               {/* Third grid */}
-              <Stack direction={"row"} spacing={2.5}>
+              <Stack direction={"row"}>
                 <Stack
                   direction={"row"}
                   spacing={2.5}
+                  className="grid-background"
                   style={{
-                    backgroundColor: "black",
-                    padding: "3px",
                     borderRadius: "40px",
                   }}
                 >
@@ -316,9 +330,8 @@ function Remote({ color }) {
                 <Stack
                   direction={"row"}
                   spacing={2.5}
+                  className="grid-background"
                   style={{
-                    backgroundColor: "black",
-                    padding: "3px",
                     borderRadius: "20px",
                   }}
                 >
@@ -473,9 +486,8 @@ function Remote({ color }) {
                   <Stack spacing={0.3}>
                     <Stack
                       spacing={1}
+                      className="grid-background"
                       style={{
-                        backgroundColor: "black",
-                        padding: "3px",
                         borderRadius: "40px",
                       }}
                     >
@@ -503,9 +515,8 @@ function Remote({ color }) {
                     </Stack>
                     <Stack
                       spacing={1}
+                      className="grid-background"
                       style={{
-                        backgroundColor: "black",
-                        padding: "3px",
                         borderRadius: "40px",
                       }}
                     >

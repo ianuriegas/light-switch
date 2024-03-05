@@ -23,11 +23,10 @@
     width: 100%;
 }
 
-.stack-row {
+.grid-background {
     background-color: black;
     padding: 3px;
-    border-radius: 40px;
-    /* Or 20px depending on the specific stack */
+    /* border-radius: 40px; */
 }
 
 :root {
