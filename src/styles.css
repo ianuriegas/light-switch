@@ -5,6 +5,11 @@
     border-radius: 50%;
     display: inline-block;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    /* Align horizontal */
+    align-items: center;
+    /* Align vertical */
 }
 
 .app {
@@ -49,3 +54,7 @@
 body {
     background-color: var(--background-color);
 }
+
+/* .typography-style {
+    
+} */

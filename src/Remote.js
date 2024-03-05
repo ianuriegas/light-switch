@@ -1,10 +1,15 @@
 import { Card, Stack, Typography } from "@mui/material";
 import React from "react";
 import "./styles.css";
-
+import PowerSettingsNewIcon from "@mui/icons-material/PowerSettingsNew";
+import ArrowDropUpOutlinedIcon from "@mui/icons-material/ArrowDropUpOutlined";
+import ArrowDropDownOutlinedIcon from "@mui/icons-material/ArrowDropDownOutlined";
 function Remote({ color }) {
   const changeBackgroundColor = (color) => {
     document.documentElement.style.setProperty("--background-color", color);
+  };
+  const jumpBackgroundColor = (colors) => {
+    console.log(colors);
   };
   return (
     <div
@@ -59,7 +64,17 @@ function Remote({ color }) {
                       onClick={() => changeBackgroundColor("black")}
                       class="dot"
                       style={{ backgroundColor: "red" }}
-                    ></span>
+                    >
+                      <Typography
+                        variant="body2"
+                        style={{
+                          fontWeight: "bold",
+                          marginTop: "4px",
+                        }}
+                      >
+                        <PowerSettingsNewIcon style={{ fontSize: "25px" }} />
+                      </Typography>
+                    </span>
                   </Stack>
                 </Stack>
               </Stack>
@@ -83,8 +98,6 @@ function Remote({ color }) {
                       <Typography
                         variant="body2"
                         style={{
-                          marginLeft: "12.5px",
-                          marginTop: "6px",
                           fontSize: "20px",
                           fontWeight: "bold",
                         }}
@@ -122,8 +135,6 @@ function Remote({ color }) {
                       <Typography
                         variant="body2"
                         style={{
-                          marginLeft: "13px",
-                          marginTop: "6px",
                           fontSize: "20px",
                           fontWeight: "bold",
                         }}
@@ -161,8 +172,6 @@ function Remote({ color }) {
                       <Typography
                         variant="body2"
                         style={{
-                          marginLeft: "13px",
-                          marginTop: "6px",
                           fontSize: "20px",
                           fontWeight: "bold",
                         }}
@@ -200,8 +209,6 @@ function Remote({ color }) {
                       <Typography
                         variant="body2"
                         style={{
-                          marginLeft: "11px",
-                          marginTop: "6px",
                           fontSize: "20px",
                           fontWeight: "bold",
                         }}
@@ -244,12 +251,19 @@ function Remote({ color }) {
                   }}
                 >
                   <Stack spacing={1}>
-                    <span class="dot">
+                    <span
+                      onClick={() =>
+                        jumpBackgroundColor(["red", "green", "blue"])
+                      }
+                      className="dot"
+                      style={{
+                        backgroundColor: "white",
+                        transition: "background-color 1s",
+                      }}
+                    >
                       <Typography
                         variant="body2"
                         style={{
-                          marginLeft: "3px",
-                          marginTop: "12px",
                           fontSize: "10px",
                           fontWeight: "bold",
                         }}
@@ -263,8 +277,6 @@ function Remote({ color }) {
                       <Typography
                         variant="body2"
                         style={{
-                          marginLeft: "3.75px",
-                          marginTop: "12px",
                           fontSize: "10px",
                           fontWeight: "bold",
                         }}
@@ -278,8 +290,6 @@ function Remote({ color }) {
                       <Typography
                         variant="body2"
                         style={{
-                          marginLeft: "5px",
-                          marginTop: "12px",
                           fontSize: "10px",
                           fontWeight: "bold",
                         }}
@@ -293,8 +303,6 @@ function Remote({ color }) {
                       <Typography
                         variant="body2"
                         style={{
-                          marginLeft: "5px",
-                          marginTop: "12px",
                           fontSize: "10px",
                           fontWeight: "bold",
                         }}
@@ -317,27 +325,143 @@ function Remote({ color }) {
                   }}
                 >
                   <Stack spacing={1}>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                  </Stack>
-                  <Stack spacing={1}>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                  </Stack>
-                  <Stack spacing={1}>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
+                    <span class="dot">
+                      <span class="dot">
+                        <Typography
+                          variant="body2"
+                          style={{
+                            fontWeight: "bold",
+                          }}
+                        >
+                          <ArrowDropUpOutlinedIcon
+                            style={{ fontSize: "30px", color: "red" }}
+                          />
+                        </Typography>
+                      </span>
+                    </span>
                     <span class="dot">
                       <Typography
                         variant="body2"
                         style={{
-                          marginLeft: "9px",
-                          marginTop: "12px",
+                          fontWeight: "bold",
+                        }}
+                      >
+                        <ArrowDropDownOutlinedIcon
+                          style={{ fontSize: "30px", color: "red" }}
+                        />
+                      </Typography>
+                    </span>
+                    <span class="dot">
+                      <Typography
+                        variant="body2"
+                        style={{
+                          fontSize: "10px",
+                          fontWeight: "bold",
+                        }}
+                      >
+                        DIY1
+                      </Typography>
+                    </span>
+                    <span class="dot">
+                      <Typography
+                        variant="body2"
+                        style={{
+                          fontSize: "10px",
+                          fontWeight: "bold",
+                        }}
+                      >
+                        DIY4
+                      </Typography>
+                    </span>
+                  </Stack>
+                  <Stack spacing={1}>
+                    <span class="dot">
+                      <Typography
+                        variant="body2"
+                        style={{
+                          fontWeight: "bold",
+                        }}
+                      >
+                        <ArrowDropUpOutlinedIcon
+                          style={{ fontSize: "30px", color: "green" }}
+                        />
+                      </Typography>
+                    </span>
+                    <span class="dot">
+                      <Typography
+                        variant="body2"
+                        style={{
+                          fontWeight: "bold",
+                        }}
+                      >
+                        <ArrowDropDownOutlinedIcon
+                          style={{ fontSize: "30px", color: "green" }}
+                        />
+                      </Typography>
+                    </span>
+                    <span class="dot">
+                      <Typography
+                        variant="body2"
+                        style={{
+                          fontSize: "10px",
+                          fontWeight: "bold",
+                        }}
+                      >
+                        DIY2
+                      </Typography>
+                    </span>
+                    <span class="dot">
+                      <Typography
+                        variant="body2"
+                        style={{
+                          fontSize: "10px",
+                          fontWeight: "bold",
+                        }}
+                      >
+                        DIY5
+                      </Typography>
+                    </span>
+                  </Stack>
+                  <Stack spacing={1}>
+                    <span class="dot">
+                      <Typography
+                        variant="body2"
+                        style={{
+                          fontWeight: "bold",
+                        }}
+                      >
+                        <ArrowDropUpOutlinedIcon
+                          style={{ fontSize: "30px", color: "blue" }}
+                        />
+                      </Typography>
+                    </span>
+                    <span class="dot">
+                      <Typography
+                        variant="body2"
+                        style={{
+                          fontWeight: "bold",
+                        }}
+                      >
+                        <ArrowDropDownOutlinedIcon
+                          style={{ fontSize: "30px", color: "blue" }}
+                        />
+                      </Typography>
+                    </span>
+                    <span class="dot">
+                      <Typography
+                        variant="body2"
+                        style={{
+                          fontSize: "10px",
+                          fontWeight: "bold",
+                        }}
+                      >
+                        DIY3
+                      </Typography>
+                    </span>
+                    <span class="dot">
+                      <Typography
+                        variant="body2"
+                        style={{
                           fontSize: "10px",
                           fontWeight: "bold",
                         }}
@@ -347,15 +471,7 @@ function Remote({ color }) {
                     </span>
                   </Stack>
                 </Stack>
-                <Stack
-                  direction={"row"}
-                  spacing={2.5}
-                  //   style={{
-                  //     backgroundColor: "black",
-                  //     padding: "3px",
-                  //     borderRadius: "40px",
-                  //   }}
-                >
+                <Stack direction={"row"} spacing={2.5}>
                   <Stack spacing={0.3}>
                     <Stack
                       spacing={1}
@@ -365,8 +481,27 @@ function Remote({ color }) {
                         borderRadius: "40px",
                       }}
                     >
-                      <span class="dot"></span>
-                      <span class="dot"></span>
+                      <span class="dot">
+                        <Typography
+                          variant="body2"
+                          style={{
+                            fontSize: "10px",
+                            fontWeight: "bold",
+                          }}
+                        >
+                          QUICK
+                        </Typography>
+                      </span>
+                      <span class="dot">
+                        <Typography
+                          style={{
+                            fontSize: "10px",
+                            fontWeight: "bold",
+                          }}
+                        >
+                          SLOW
+                        </Typography>
+                      </span>
                     </Stack>
                     <Stack
                       spacing={1}
