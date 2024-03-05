@@ -21,9 +21,10 @@ function Remote({ color }) {
         className="remote-card"
         style={{
           backgroundColor: "black",
+          borderRadius: "4px",
         }}
       >
-        <Card style={{ borderRadius: "4px", height: "100%", width: "100%" }}>
+        <Card className="inner-card" style={{ borderRadius: "4px" }}>
           <div style={{ padding: "19px" }}>
             <Stack alignItems={"center"} spacing={1.5}>
               {/* First grid */}
